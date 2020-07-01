@@ -1,0 +1,29 @@
+{
+  "name": "serverless-ruby-layer",
+  "version": "1.0.0",
+  "description": "Serverless Plugin to bundle gemfile as lamda layer",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/navarasu/serverless-ruby-layer.git"
+  },
+  "keywords": [
+    "serverless",
+    "layer",
+    "ruby"
+  ],
+  "author": "Navarasu <nova@navarasu.coms>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/navarasu/serverless-ruby-layer/issues"
+  },
+  "homepage": "https://github.com/navarasu/serverless-ruby-layer#readme",
+  "dependencies": {
+    "bluebird": "^3.5.5",
+    "fs-extra": "^8.1.0",
+    "jszip": "^3.1.0"
+  }
+}
