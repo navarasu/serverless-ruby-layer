@@ -1,6 +1,6 @@
 {
   "name": "serverless-ruby-layer",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "Serverless Plugin to bundle gemfile as lamda layer",
   "main": "index.js",
   "scripts": {
@@ -12,10 +12,16 @@
   },
   "keywords": [
     "serverless",
-    "layer",
-    "ruby"
+    "serverless-plugin",
+    "aws-lambda",
+    "aws",
+    "aws layer",
+    "ruby",
+    "serverless",
+    "gemfile",
+    "bundler"
   ],
-  "author": "Navarasu <nova@navarasu.coms>",
+  "author": "Navarasu <nova@navarasu.com>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/navarasu/serverless-ruby-layer/issues"
