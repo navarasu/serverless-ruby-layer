@@ -5,7 +5,9 @@ const { bundleGems } = require('./lib/bundle');
 class ServerlessRubyBundler {
   get options() {
     const options = Object.assign(
-      {},
+      {
+        use_docker: false
+      },
       (this.serverless.service.custom &&
         this.serverless.service.custom.rubyLayer) ||
         {}
