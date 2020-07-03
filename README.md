@@ -39,3 +39,36 @@ functions:
 ```
 
 Running `servleress deploy` automatically deploys the required gems as in Gemfile to AWS lambda layer and make the gems available to the `RUBY_PATH` of the functions `hello.handler`
+
+## Customization
+
+### Using docker for gems with OS specific C extentions
+
+*Add custom config in `serverless.yml`*
+
+```YML
+service: basic
+
+plugins:
+  - serverless-ruby-layer
+
+custom:
+  rubyLayer:
+    use_docker: true
+
+provider:
+  name: aws
+  runtime: ruby2.5
+
+functions:
+  hello:
+    handler: handler.hello
+  ```
+
+*Gemfile*
+
+```ruby
+  source 'https://rubygems.org'
+  gem 'http'
+  gem 'nokogiri'
+```
