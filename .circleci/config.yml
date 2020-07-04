@@ -7,10 +7,10 @@ jobs:
   build-and-test:
     docker:
       - image: cimg/ruby:2.5-node
-
     steps:
       - checkout
       - node/install-packages
+      - run: sudo npm install -g serverless
       - run: npm test
 
 workflows:
