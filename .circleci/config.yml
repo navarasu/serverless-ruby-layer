@@ -1,0 +1,20 @@
+version: 2.1 
+
+orbs:
+  node: circleci/node@3
+
+jobs:
+  build-and-test:
+    docker:
+      - image: cimg/ruby:2.5-node
+
+    steps:
+      - checkout
+      - node/install-packages
+      - run: npm test
+
+workflows:
+  build-and-test-workflow:
+    jobs:
+      - build-and-test
+
