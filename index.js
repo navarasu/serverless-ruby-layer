@@ -1,6 +1,6 @@
 'use strict';
 const Promise = require('bluebird');
-const { bundleGems } = require('./lib/bundle');
+const { bundleGems, excludePackage } = require('./lib/bundle');
 
 class ServerlessRubyBundler {
   get options() {
@@ -25,14 +25,10 @@ class ServerlessRubyBundler {
         },
     };
 
-    const packRubyLayer  = () =>  {
-      return Promise.bind(this)
-                     .then(bundleGems);
-    } 
-
     this.hooks = {
-      'after:package:createDeploymentArtifacts': packRubyLayer,
-      'rubylayer:pack': packRubyLayer,
+      'before:package:createDeploymentArtifacts': excludePackage.bind(this),
+      'after:package:createDeploymentArtifacts': bundleGems.bind(this),
+      'rubylayer:pack': bundleGems.bind(this),
     };
 
   }
