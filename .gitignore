@@ -25,3 +25,5 @@ package-lock.json
 
 #OS
 .DS_Store
+
+.serverless-test
