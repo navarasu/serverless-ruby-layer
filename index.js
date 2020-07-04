@@ -1,5 +1,4 @@
 'use strict';
-const Promise = require('bluebird');
 const { bundleGems, excludePackage } = require('./lib/bundle');
 
 class ServerlessRubyBundler {

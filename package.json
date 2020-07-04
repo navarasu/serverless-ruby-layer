@@ -4,7 +4,7 @@
   "description": "Serverless Plugin to bundle gemfile as lamda layer",
   "main": "index.js",
   "scripts": {
-    "test": "node test.js"
+    "test": "mocha"
   },
   "repository": {
     "type": "git",
@@ -31,5 +31,8 @@
     "bluebird": "^3.5.5",
     "fs-extra": "^8.1.0",
     "jszip": "^3.1.0"
+  },
+  "devDependencies": {
+    "mocha": "^8.0.1"
   }
 }
