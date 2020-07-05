@@ -6,25 +6,24 @@ const { runCommand,readZip } = require('./helper');
 describe('serverless package', function () {
   before(function () {
     this.timeout(60000);
-    this.plugin_path = runCommand('npm',['pack'])
-    this.test_path = '.serverless-test'
+    this.plugin_path = runCommand('npm',['link'])
+    const homedir = require('os').homedir();
+    this.test_path = path.join(homedir,'.serverless-test')
     fs.removeSync(this.test_path)
     fs.copySync('examples',this.test_path)
-    fs.renameSync(this.plugin_path,path.join(this.test_path,this.plugin_path))
   })
   it('should bundle gem and configure layer ', function () {
     this.timeout(60000);
     let context_path = path.join(this.test_path,'basic')
     options= {cwd: context_path, encoding : 'utf8'}
-    runCommand('npm',['init','--yes'],options)
-    runCommand('npm',['install','../'+this.plugin_path],options)
+    runCommand('npm',['link','serverless-ruby-layer'],options)
     runCommand('sls',['package'],options)
     let dot_serverless_path = path.join(context_path,'.serverless')
     let layer_zip_path = path.join(dot_serverless_path,'build','ruby_layer','gemLayer.zip')
     let function_zip_path = path.join(dot_serverless_path,'basic.zip')
     value = readZip(function_zip_path)
             .then(function(data){
-              assert.deepEqual(['handler.rb','package-lock.json','package.json'],data)
+              assert.deepEqual(['handler.rb'],data)
             })
     run_time ='2.5'
     value = readZip(layer_zip_path)
@@ -51,6 +50,7 @@ describe('serverless package', function () {
                               LayerName: 'basic-dev-ruby-bundle'
                             })
     assert.deepEqual(cloud_resource['HelloLambdaFunction']['Properties']['Layers'],[ { Ref: 'GemLayerLambdaLayer' } ])
-    assert.deepEqual(cloud_resource['HelloLambdaFunction']['Properties']['Environment'],{Variables: { GEM_PATH: '/opt/'+run_time+'.0'}})
+    assert.deepEqual(cloud_resource['HelloLambdaFunction']['Properties']['Environment'],
+                     {Variables: { GEM_PATH: '/opt/'+run_time+'.0'}})
   });
 });

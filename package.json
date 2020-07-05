@@ -4,7 +4,8 @@
   "description": "Serverless Plugin to bundle gemfile as lamda layer",
   "main": "index.js",
   "scripts": {
-    "test": "mocha"
+    "test": "nyc mocha",
+    "coverage": "nyc report --reporter=text-lcov | coveralls"
   },
   "repository": {
     "type": "git",
@@ -33,6 +34,8 @@
     "jszip": "^3.1.0"
   },
   "devDependencies": {
-    "mocha": "^8.0.1"
+    "coveralls": "^3.1.0",
+    "mocha": "^8.0.1",
+    "nyc": "^15.1.0"
   }
 }
