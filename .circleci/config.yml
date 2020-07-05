@@ -11,7 +11,10 @@ jobs:
       - checkout
       - node/install-packages
       - run: sudo npm install -g serverless
+      - run: sudo chown -R circleci:circleci /home/circleci/project/
+      - run: sudo chown -R circleci:circleci  /usr/local/lib/node_modules/
       - run: npm test
+      - run: npm run coverage
 
   deployment:
     executor: node/default
