@@ -1,4 +1,4 @@
-<h1><img height="75" src="https://user-images.githubusercontent.com/20145075/86084483-aa2d4b80-baba-11ea-938d-53d6b7e37896.png" alt="iOS resume application project app icon"></h1>
+<h1><img height="75" src="https://navarasu.github.io/serverless-ruby-layer/assets/serverless-ruby-layer.png" alt="Serverless Ruby Layer"></h1>
 
 [![serverless](http://public.serverless.com/badges/v3.svg)](http://www.serverless.com)  [![npm](https://img.shields.io/npm/v/serverless-ruby-layer.svg)](https://www.npmjs.com/package/serverless-ruby-layer) [![Build Status](https://img.shields.io/circleci/build/github/navarasu/serverless-ruby-layer)](https://circleci.com/gh/navarasu/serverless-ruby-layer) [![Coverage Status](https://coveralls.io/repos/github/navarasu/serverless-ruby-layer/badge.svg?branch=master)](https://coveralls.io/github/navarasu/serverless-ruby-layer?branch=master) [![MIT License](https://img.shields.io/npm/l/serverless-ruby-layer)](https://github.com/navarasu/serverless-ruby-layer/blob/master/LICENSE)
 
@@ -8,13 +8,15 @@ It auto configures the lamda layer and RUBY_PATH to the all the functions.
 
 ## Install
 
-```shell
-npm install serverless-ruby-layer
 ```
+sls plugin install -n serverless-ruby-layer
+```
+
+*This will add the plugin to `package.json` and the plugins section of `serverless.yml`.*
 
 ## Simple Usage
 
-*Include plugin in the `serverless.yml`*
+*`serverless.yml`*
 
 ```YML
 service: basic
@@ -31,7 +33,7 @@ functions:
     handler: handler.hello
   ```
 
-*Gemfile*
+*`Gemfile`*
 
 ```ruby
   source 'https://rubygems.org'
@@ -40,11 +42,13 @@ functions:
 
 Running `servleress deploy` automatically deploys the required gems as in Gemfile to AWS lambda layer and make the gems available to the `RUBY_PATH` of the functions `hello.handler`
 
+Refer [here](https://github.com/navarasu/serverless-ruby-layer/blob/master/examples/basic) for example.
+
 ## Customization
 
 ### Using docker for gems with OS specific C extentions
 
-*Add custom config in `serverless.yml`*
+*`serverless.yml`*
 
 ```YML
 service: basic
@@ -65,7 +69,7 @@ functions:
     handler: handler.hello
   ```
 
-*Gemfile*
+*`Gemfile`*
 
 ```ruby
   source 'https://rubygems.org'
@@ -73,14 +77,11 @@ functions:
   gem 'nokogiri'
 ```
 
-
 ## Contributing
-
 
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
 Please make sure to update tests as appropriate.
-
 
 ## License
 
