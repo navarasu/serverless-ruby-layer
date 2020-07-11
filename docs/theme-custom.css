@@ -1,0 +1,6 @@
+  .side-bar-logo {
+     background-repeat: no-repeat;
+     background-image: var(--logoImage);
+     background-size: contain;
+     height: 60px;
+  }
