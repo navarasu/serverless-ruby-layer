@@ -14,11 +14,22 @@ sls plugin install -n serverless-ruby-layer
 
 *This will add the plugin to `package.json` and the plugins section of `serverless.yml`.*
 
-## Simple Usage
+## Documentation
+
+Check out the documentation [here](https://navarasu.github.io/serverless-ruby-layer) for,
+
+* [Quick Start](https://navarasu.github.io/serverless-ruby-layer/#/quickstart)
+* [Usage and Examples](https://navarasu.github.io/serverless-ruby-layer/#/usage_examples)
+* [Configuration](https://navarasu.github.io/serverless-ruby-layer/#/configuration)
+* [Release Notes](https://navarasu.github.io/serverless-ruby-layer/#/release_notes)
+
+## Getting Started
+
+### Simple Usage
 
 *`serverless.yml`*
 
-```YML
+```yml
 service: basic
 
 plugins:
@@ -42,40 +53,31 @@ functions:
 
 Running `servleress deploy` automatically deploys the required gems as in Gemfile to AWS lambda layer and make the gems available to the `RUBY_PATH` of the functions `hello.handler`
 
-Refer [here](https://github.com/navarasu/serverless-ruby-layer/blob/master/examples/basic) for example.
+Refer [example](https://github.com/navarasu/serverless-ruby-layer/blob/master/examples/basic) amd [docs](https://navarasu.github.io/serverless-ruby-layer) for more details
 
-## Customization
+### Customization
 
-### Using docker for gems with OS specific C extentions
+The plugin operation can be customized by specifying `custom` configuration under `rubyLayer`. 
 
-*`serverless.yml`*
+For example to use docker environment for packing gem, the below configuration is added to `serverless.yml`
 
 ```YML
-service: basic
-
-plugins:
-  - serverless-ruby-layer
-
 custom:
   rubyLayer:
     use_docker: true
-
-provider:
-  name: aws
-  runtime: ruby2.5
-
-functions:
-  hello:
-    handler: handler.hello
   ```
 
-*`Gemfile`*
+For more details, refer the docs [here](https://navarasu.github.io/serverless-ruby-layer/configuration)
 
-```ruby
-  source 'https://rubygems.org'
-  gem 'http'
-  gem 'nokogiri'
-```
+
+## Usage
+
+Using the custom configuration, the plugin can be utilized for below cases,
+* Using locallly installed bundler for gems which native  extensions  - [Example](https://github.com/navarasu/serverless-ruby-layer/blob/master/examples/basic) - [Docs](https://navarasu.github.io/serverless-ruby-layer/use_docker)
+* Using Docker for gems with OS native C extensions or system libraries like `http`, `Nokogiri` - [Example](https://github.com/navarasu/serverless-ruby-layer/blob/master/examples/use_docker) - [Docs](https://navarasu.github.io/serverless-ruby-layer/use_docker)
+* Preinstall OS packages (yum packages) for gems which requires OS native system libraries like `pg`, `mysql`, `RMagick` - [Example](https://github.com/navarasu/serverless-ruby-layer/blob/master/examples/use_docker_with_yums) - [Docs](https://navarasu.github.io/serverless-ruby-layer/use_docker_with_yums)
+* Using Dockerfile for gems which with other OS linux image or system libraries and utilities -  [Example](https://github.com/navarasu/serverless-ruby-layer/blob/master/examples/use_docker_file) - [Docs](https://navarasu.github.io/serverless-ruby-layer/use_docker_file)
+
 
 ## Contributing
 
