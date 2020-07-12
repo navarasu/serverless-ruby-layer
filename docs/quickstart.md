@@ -2,7 +2,7 @@
 
 ## Install
 
-```
+```bash
 sls plugin install -n serverless-ruby-layer
 ```
 
@@ -12,7 +12,7 @@ sls plugin install -n serverless-ruby-layer
 
 *`serverless.yml`*
 
-```YML
+```yml
 service: basic
 
 plugins:
