@@ -1,0 +1,19 @@
+service: using-docker-file 
+
+plugins:
+  - serverless-ruby-layer
+
+custom:
+  rubyLayer:
+    use_docker: true
+    docker_file: Dockerfile
+    native_libs:
+      - /usr/lib64/libpq.so.5
+
+provider:
+  name: aws
+  runtime: ruby2.5
+
+functions:
+  hello:
+    handler: handler.hello
