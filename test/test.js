@@ -19,7 +19,7 @@ describe('serverless package', function () {
     runCommand('npm',['link','serverless-ruby-layer'],options)
     runCommand('sls',['package'],options)
     let dot_serverless_path = path.join(context_path,'.serverless')
-    let layer_zip_path = path.join(dot_serverless_path,'build','ruby_layer','gemLayer.zip')
+    let layer_zip_path = path.join(dot_serverless_path,'ruby_layer','gemLayer.zip')
     let function_zip_path = path.join(dot_serverless_path,'basic.zip')
     value = readZip(function_zip_path)
             .then(function(data){
@@ -32,7 +32,7 @@ describe('serverless package', function () {
                                 '/gems/','/specifications/','/gems/httparty-0.18.1/',
                                 '/gems/mime-types-3.3.1/','/gems/multi_xml-0.6.0/',
                                 '/gems/mime-types-data-3.2020.0512/']
-                                .map(data => run_time+'.0'+data).sort(),
+                                .map(data => 'ruby/'+run_time+'.0'+data).concat(['ruby/']).sort(),
                                 data.sort())
               })
     let rawdata = fs.readFileSync(path.join(dot_serverless_path,'serverless-state.json'));
@@ -51,6 +51,6 @@ describe('serverless package', function () {
                             })
     assert.deepEqual(cloud_resource['HelloLambdaFunction']['Properties']['Layers'],[ { Ref: 'GemLayerLambdaLayer' } ])
     assert.deepEqual(cloud_resource['HelloLambdaFunction']['Properties']['Environment'],
-                     {Variables: { GEM_PATH: '/opt/'+run_time+'.0'}})
+                     {Variables: { GEM_PATH: '/opt/ruby/'+run_time+'.0'}})
   });
 });

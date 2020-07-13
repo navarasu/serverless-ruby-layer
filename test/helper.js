@@ -23,7 +23,7 @@ function readZip(filePath){
                 .then(function (zip) {
                     let check = []
                     zip.forEach(function (relativePath, file){
-                      if (file.dir && relativePath.split(path.sep).length <= 4){
+                      if (file.dir && relativePath.split(path.sep).length <= 5){
                           check.push(relativePath)
                       } else if (relativePath.split(path.sep).length <= 1) {
                             check.push(relativePath)
