@@ -1,11 +1,14 @@
 <!-- # Customization -->
 
-##  Preinstall OS packages (yum packages) for gems which requires OS native system libraries
+##  Preinstall yum packages for gems which requires OS native system libraries
 
-*Add custom config in `serverless.yml`*
 
-```YML
-service: basic
+<!-- tabs:start -->
+
+#### ** serverless.yml **
+
+```yml
+service: using-docker-yums
 
 plugins:
   - serverless-ruby-layer
@@ -15,6 +18,8 @@ custom:
     use_docker: true
     docker_yums:
       - postgresql-devel
+    native_libs:
+      - /usr/lib64/libpq.so.5
 
 provider:
   name: aws
@@ -23,13 +28,27 @@ provider:
 functions:
   hello:
     handler: handler.hello
-```
+  ```
 
-*Gemfile*
+#### ** Gemfile **
 
 ```ruby
-  source 'https://rubygems.org'
-  gem 'pg'
-  gem 'nokogiri'
+source 'https://rubygems.org'
+gem 'pg'
 ```
 
+#### ** handler.rb **
+
+```ruby
+require 'pg'
+
+def hello(event:, context:)
+  { statusCode: 200, body: {
+    "pg_version": PG.library_version
+    }
+  }
+end
+
+```
+
+<!-- tabs:end -->

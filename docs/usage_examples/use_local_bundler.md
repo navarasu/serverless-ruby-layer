@@ -1,9 +1,11 @@
 
 ##  Using locallly installed bundler for gems which native  extensions 
 
-*`serverless.yml`*
+<!-- tabs:start -->
 
-```YML
+#### ** serverless.yml **
+
+```yml
 service: basic
 
 plugins:
@@ -18,9 +20,24 @@ functions:
     handler: handler.hello
   ```
 
-*Gemfile*
+#### ** Gemfile **
 
 ```ruby
-  source 'https://rubygems.org'
-  gem 'httparty'
+source 'https://rubygems.org'
+gem 'httparty'
 ```
+
+#### ** handler.rb **
+
+```ruby
+require 'httparty'
+
+def hello(event:, context:)
+  body = HTTParty.get("https://github.com").body
+
+  { statusCode: 200, body: body }
+end
+
+```
+
+<!-- tabs:end -->

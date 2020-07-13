@@ -1,10 +1,12 @@
 
 ## Using Docker for gems with OS native C extensions or system libraries
 
-*Add custom config in `serverless.yml`*
+<!-- tabs:start -->
 
-```YML
-service: basic
+#### ** serverless.yml **
+
+```yml
+service: using_docker
 
 plugins:
   - serverless-ruby-layer
@@ -20,13 +22,31 @@ provider:
 functions:
   hello:
     handler: handler.hello
+
   ```
 
-*Gemfile*
+#### ** Gemfile **
 
 ```ruby
-  source 'https://rubygems.org'
-  gem 'http'
-  gem 'nokogiri'
+source 'https://rubygems.org'
+gem 'http'
+gem 'nokogiri'
 ```
 
+#### ** handler.rb **
+
+```ruby
+require 'http'
+require 'nokogiri'
+
+def hello(event:, context:)
+  body = HTTP.get('https://github.com').body.to_s
+  doc = Nokogiri::HTML(body)
+
+  { statusCode: 200, body: doc.title }
+end
+
+
+```
+
+<!-- tabs:end -->

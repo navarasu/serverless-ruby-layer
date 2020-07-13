@@ -8,7 +8,7 @@ sls plugin install -n serverless-ruby-layer
 
 *This will add the plugin to `package.json` and the plugins section of `serverless.yml`.*
 
-## Simple Usage
+## Usage
 
 *`serverless.yml`*
 
@@ -36,4 +36,4 @@ functions:
 
 Running `servleress deploy` automatically deploys the required gems as in Gemfile to AWS lambda layer and make the gems available to the `RUBY_PATH` of the functions `hello.handler`
 
-Refer [here](https://github.com/navarasu/serverless-ruby-layer/blob/master/examples/basic) for example.
+Refer [example](https://github.com/navarasu/serverless-ruby-layer/blob/master/examples/basic) and [docs](serverless-ruby-layer/#/use_local_bundler) for more details

@@ -5,7 +5,21 @@
      height: 60px;
   }
 
-  .app-nav {
+.btn {
+    background: none;
+    color: var(--heading-color);
+    padding: 8px 15px;
+    border: 1px solid var(--heading-color);
+    border-radius: 5px;
+}
+
+button:focus {outline:0;}
+
+button:hover {
+  cursor: pointer;
+}
+
+.app-nav {
   margin: 15px 60px 0 0;
   position: absolute;
   right: 0;
@@ -14,7 +28,7 @@
 }
 
 .app-nav.no-badge {
-  margin-right: 25px
+  margin-right: 125px
 }
 
 .app-nav p {
