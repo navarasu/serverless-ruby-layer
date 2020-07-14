@@ -12,6 +12,18 @@ Refer [here](https://www.serverless.com/framework/docs/getting-started/) for ⚡
 
 ### Configure your aws credentials
 
+```bash
+  serverless config credentials --provider aws --key AKIAIOSFODNN7EXAMPLE --secret wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
+```
+or
+```bash
+$ aws configure
+AWS Access Key ID [None]: AKIAIOSFODNN7EXAMPLE
+AWS Secret Access Key [None]: wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
+Default region name [None]: us-west-2
+Default output format [None]: ENTER
+```
+Refer [here](https://www.serverless.com/framework/docs/providers/aws/guide/credentials/) for more details
 
 ## A Simple Example
 

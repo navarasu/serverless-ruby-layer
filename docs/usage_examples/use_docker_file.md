@@ -1,5 +1,5 @@
 
-##  Using Dockerfile for gems which with other system libraries and configuration
+##  Using Dockerfile for gems which requires other system libraries and configuration
 
 
 <!-- tabs:start -->

@@ -13,10 +13,13 @@
     font-weight: 500;
     padding: 8px 15px;
 }
+
+.app-nav.no-badge {
+     right: 0px;
 }
 
 button {
-  outline:0;
+  outline:none;
 }
 
 button:hover {
@@ -29,10 +32,6 @@ button:hover {
   right: 0;
   text-align: right;
   z-index: 10
-}
-
-.app-nav.no-badge {
-  margin-right: 125px
 }
 
 .app-nav p {
@@ -115,5 +114,6 @@ button:hover {
   display: block
 }
 #docsify-darklight-theme {
-  top:100px;
+  right: 25px;
+    top: 90px;
   }

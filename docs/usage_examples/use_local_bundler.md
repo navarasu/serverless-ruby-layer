@@ -1,5 +1,5 @@
 
-##  Using locallly installed bundler for gems which native  extensions 
+##  Using locallly installed bundler for gems without any native extensions
 
 <!-- tabs:start -->
 

@@ -74,10 +74,10 @@ For more details, refer the docs [here](https://navarasu.github.io/serverless-ru
 ## Usage
 
 Using the custom configuration, the plugin can be utilized for below cases,
-* Using locallly installed bundler for gems which native  extensions  - [Example](https://github.com/navarasu/serverless-ruby-layer/blob/master/examples/basic) - [Docs](https://navarasu.github.io/serverless-ruby-layer/use_docker)
+* Using locallly installed bundler for gems without any native  extensions  - [Example](https://github.com/navarasu/serverless-ruby-layer/blob/master/examples/basic) - [Docs](https://navarasu.github.io/serverless-ruby-layer/use_docker)
 * Using Docker for gems with OS native C extensions or system libraries like `http`, `Nokogiri` - [Example](https://github.com/navarasu/serverless-ruby-layer/blob/master/examples/use_docker) - [Docs](https://navarasu.github.io/serverless-ruby-layer/use_docker)
 * Preinstall OS packages (yum packages) for gems which requires OS native system libraries like `pg`, `mysql`, `RMagick` - [Example](https://github.com/navarasu/serverless-ruby-layer/blob/master/examples/use_docker_with_yums) - [Docs](https://navarasu.github.io/serverless-ruby-layer/use_docker_with_yums)
-* Using Dockerfile for gems which with other OS Linux image or system libraries and utilities -  [Example](https://github.com/navarasu/serverless-ruby-layer/blob/master/examples/use_docker_file) - [Docs](https://navarasu.github.io/serverless-ruby-layer/use_docker_file)
+* Using Dockerfile for gems which requires other system libraries and configuration -  [Example](https://github.com/navarasu/serverless-ruby-layer/blob/master/examples/use_docker_file) - [Docs](https://navarasu.github.io/serverless-ruby-layer/use_docker_file)
 
 
 ## Contributing
