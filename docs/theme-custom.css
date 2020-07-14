@@ -1,0 +1,117 @@
+  .side-bar-logo {
+     background-repeat: no-repeat;
+     background-image: var(--logoImage);
+     background-size: contain;
+     height: 60px;
+  }
+
+.app-nav li a.btn {
+    color: white;
+    background: #da4437;
+    border: 1px solid #da4437;
+    border-radius: 8px;
+    font-weight: 500;
+    padding: 8px 15px;
+}
+}
+
+button:focus {outline:0;}
+
+button:hover {
+  cursor: pointer;
+}
+
+.app-nav {
+  margin: 15px 60px 0 0;
+  position: absolute;
+  right: 0;
+  text-align: right;
+  z-index: 10
+}
+
+.app-nav.no-badge {
+  margin-right: 125px
+}
+
+.app-nav p {
+  margin: 0
+}
+
+.app-nav>a {
+  margin: 0 1rem;
+  padding: 5px 0
+}
+
+.app-nav li,
+.app-nav ul {
+  display: inline-block;
+  list-style: none;
+  margin: 0
+}
+
+.app-nav a {
+  color: inherit;
+  font-size: 16px;
+  text-decoration: none;
+  transition: color .3s
+}
+
+.app-nav a.active,
+.app-nav a:hover {
+  color: var(--theme-color)
+}
+
+.app-nav a.active {
+  border-bottom: 2px solid var(--theme-color)
+}
+
+.app-nav li {
+  display: inline-block;
+  margin: 0 1rem;
+  padding: 5px 0;
+  position: relative;
+  cursor: pointer
+}
+
+.app-nav li ul {
+  background-color: #fff;
+  border: 1px solid;
+  border-color: #ddd #ddd #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  display: none;
+  max-height: calc(100vh - 61px);
+  overflow-y: auto;
+  padding: 10px 0;
+  position: absolute;
+  right: -15px;
+  text-align: left;
+  top: 100%;
+  white-space: nowrap
+}
+
+.app-nav li ul li {
+  display: block;
+  font-size: 14px;
+  line-height: 1rem;
+  margin: 8px 14px;
+  white-space: nowrap
+}
+
+.app-nav li ul a {
+  display: block;
+  font-size: inherit;
+  margin: 0;
+  padding: 0
+}
+
+.app-nav li ul a.active {
+  border-bottom: 0
+}
+
+.app-nav li:hover ul {
+  display: block
+}
+#docsify-darklight-theme {
+  top:100px;
+  }
