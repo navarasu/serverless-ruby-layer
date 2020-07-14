@@ -34,6 +34,6 @@ functions:
   gem 'httparty'
 ```
 
-Running `servleress deploy` automatically deploys the required gems as in Gemfile to AWS lambda layer and make the gems available to the `RUBY_PATH` of the functions `hello.handler`
+Running `serverless deploy` automatically deploys the required gems as in Gemfile to AWS lambda layer and make the gems available to the `RUBY_PATH` of the functions `hello.handler`
 
 Refer [example](https://github.com/navarasu/serverless-ruby-layer/blob/master/examples/basic) and [docs](serverless-ruby-layer/#/use_local_bundler) for more details

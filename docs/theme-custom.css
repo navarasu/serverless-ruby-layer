@@ -5,12 +5,14 @@
      height: 60px;
   }
 
-.btn {
-    background: none;
-    color: var(--heading-color);
+.app-nav li a.btn {
+    color: white;
+    background: #da4437;
+    border: 1px solid #da4437;
+    border-radius: 8px;
+    font-weight: 500;
     padding: 8px 15px;
-    border: 1px solid var(--heading-color);
-    border-radius: 5px;
+}
 }
 
 button:focus {outline:0;}
