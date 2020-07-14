@@ -1,9 +1,9 @@
-  .side-bar-logo {
-     background-repeat: no-repeat;
-     background-image: var(--logoImage);
-     background-size: contain;
-     height: 60px;
-  }
+.side-bar-logo {
+   background-repeat: no-repeat;
+   background-image: var(--logoImage);
+   background-size: contain;
+   height: 60px;
+}
 
 .app-nav li a.btn {
     color: white;
@@ -15,7 +15,9 @@
 }
 }
 
-button:focus {outline:0;}
+button {
+  outline:0;
+}
 
 button:hover {
   cursor: pointer;

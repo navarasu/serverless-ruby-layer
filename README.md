@@ -8,6 +8,10 @@ It auto-configures the AWS lambda layer and RUBY_PATH to all the functions.
 
 ## Install
 
+Install ⚡️ [serverless](https://www.serverless.com/). Refer [here](https://www.serverless.com/framework/docs/getting-started/) for serverless installation instructions.
+
+Navigate to your serverless project and install the plugin
+
 ```
 sls plugin install -n serverless-ruby-layer
 ```
@@ -51,7 +55,7 @@ functions:
   gem 'httparty'
 ```
 
-Running `serverless deploy` automatically deploys the required gems as in Gemfile to AWS lambda layer and make the gems available to the `RUBY_PATH` of the functions `hello.handler`
+Running `sls deploy` automatically deploys the required gems as in Gemfile to AWS lambda layer and make the gems available to the `RUBY_PATH` of the functions `hello.handler`
 
 Refer [example](https://github.com/navarasu/serverless-ruby-layer/blob/master/examples/basic) amd [docs](https://navarasu.github.io/serverless-ruby-layer) for more details
 

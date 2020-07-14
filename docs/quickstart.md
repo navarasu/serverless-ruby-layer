@@ -1,39 +1,55 @@
 # Quick Start
 
-## Install
+## Install 
+
+### Install Serverless
 
 ```bash
-sls plugin install -n serverless-ruby-layer
+npm install -g serverless
 ```
 
-*This will add the plugin to `package.json` and the plugins section of `serverless.yml`.*
+Refer [here](https://www.serverless.com/framework/docs/getting-started/) for ⚡️ [serverless](https://www.serverless.com/) installation instructions.
 
-## Usage
+### Configure your aws credentials
 
-*`serverless.yml`*
 
-```yml
-service: basic
+## A Simple Example
 
-plugins:
-  - serverless-ruby-layer
+Let's check simple example to deploy httpparty gem to layer and use it in example function.
 
-provider:
-  name: aws
-  runtime: ruby2.5
+#### Checkout or Download this example project
 
-functions:
-  hello:
-    handler: handler.hello
-  ```
-
-*`Gemfile`*
-
-```ruby
-  source 'https://rubygems.org'
-  gem 'httparty'
+```bash
+  git clone https://github.com/navarasu/serverless-ruby-examples.git
 ```
 
-Running `serverless deploy` automatically deploys the required gems as in Gemfile to AWS lambda layer and make the gems available to the `RUBY_PATH` of the functions `hello.handler`
+#### Navigate to the project and install plugin 
 
-Refer [example](https://github.com/navarasu/serverless-ruby-layer/blob/master/examples/basic) and [docs](serverless-ruby-layer/#/use_local_bundler) for more details
+```bash
+ cd serverless-ruby-examples/deploy_http_party
+ sls plugin install -n serverless-ruby-layer
+```
+
+#### Deploy example to AWS
+
+```bash
+ sls deploy
+```
+
+Running `sls deploy` automatically deploys the required gems as in Gemfile to AWS lambda layer and make the gems available to the `RUBY_PATH` of the functions `hello.handler`
+
+![example output](assets/example_output.png)
+
+###  Invoke AWS funtions to verify deployment
+
+```bash
+ sls invoke -f hello
+
+```
+
+
+  👍🎉 Great !!! You tried the simple example to deploy gems to AWS layer along with function 🎉👍.
+
+
+For more usage and examples refer [here](https://navarasu.github.io/serverless-ruby-layer/#/usage_examples)
+
