@@ -6,8 +6,12 @@ const path = require('path');
 
 function runCommand(cmd,args,options) {
   const ps = spawnSync(cmd, args,options);
-  console.log(ps.stderr.toString())
-  console.log(ps.stdout.toString());
+  if (ps.stdout){
+    console.log(ps.stdout.toString())
+  }
+  if (ps.stderr){
+    console.log(ps.stderr.toString())
+  }
   if (ps.error) {
     throw new Error(ps.error);
   } else if (ps.status !== 0) {
