@@ -12,22 +12,36 @@
     "url": "git+https://github.com/navarasu/serverless-ruby-layer.git"
   },
   "keywords": [
+    "serverless.com",
     "serverless",
-    "serverless-plugin",
+    "serverless plugins",
     "aws-lambda",
     "aws",
     "aws layer",
     "ruby",
-    "serverless",
     "gemfile",
-    "bundler"
+    "bundler",
+    "serverless framework plugin",
+    "serverless applications",
+    "lambda",
+    "aws lambda",
+    "aws lambda layer",
+    "amazon",
+    "amazon lambda services"
   ],
   "author": "Navarasu <nova@navarasu.com>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/navarasu/serverless-ruby-layer/issues"
   },
-  "homepage": "https://github.com/navarasu/serverless-ruby-layer#readme",
+  "files": [
+    "index.js",
+    "lib/*.js",
+    "LICENSE",
+    "package.json",
+    "README.md"
+  ],
+  "homepage": "https://navarasu.github.io/serverless-ruby-layer",
   "dependencies": {
     "bluebird": "^3.5.5",
     "fs-extra": "^8.1.0",
