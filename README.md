@@ -89,6 +89,8 @@ Pull requests are welcome. For major changes, please open an issue first to disc
 
 Please make sure to update the tests as appropriate.
 
+Refer [Guidelines](https://github.com/navarasu/serverless-ruby-layer/blob/master/CONTRIBUTING.md)  for more information.
+
 ## License
 
 [MIT](https://choosealicense.com/licenses/mit/)
