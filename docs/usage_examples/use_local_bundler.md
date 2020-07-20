@@ -46,10 +46,10 @@ end
 
 
 ```bash
-  git clone https://github.com/navarasu/serverless-ruby-examples.git
+  git clone https://github.com/navarasu/serverless-ruby.git
 ```
 ```bash
-  cd serverless-ruby-examples/deploy_http_party
+  cd serverless-ruby/deploy_http_party
 
   sls plugin install -n serverless-ruby-layer
 

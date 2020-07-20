@@ -59,10 +59,10 @@ end
 
 
 ```bash
-  git clone https://github.com/navarasu/serverless-ruby-examples.git
+  git clone https://github.com/navarasu/serverless-ruby.git
 ```
 ```bash
-  cd serverless-ruby-examples/deploy_pg_gem
+  cd serverless-ruby/deploy_pg_gem
 
   sls plugin install -n serverless-ruby-layer
 

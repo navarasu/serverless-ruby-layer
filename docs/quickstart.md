@@ -13,15 +13,11 @@ Refer [here](https://www.serverless.com/framework/docs/getting-started/) for ⚡
 ### Configure your aws credentials
 
 ```bash
-  serverless config credentials --provider aws --key AKIAIOSFODNN7EXAMPLE --secret wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
+serverless config credentials --provider aws --key AKIAIOSFODNN7EXAMPLE --secret wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
 ```
 or
 ```bash
-$ aws configure
-AWS Access Key ID [None]: AKIAIOSFODNN7EXAMPLE
-AWS Secret Access Key [None]: wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
-Default region name [None]: us-west-2
-Default output format [None]: ENTER
+aws configure
 ```
 Refer [here](https://www.serverless.com/framework/docs/providers/aws/guide/credentials/) for more details
 
@@ -32,13 +28,13 @@ Let's check simple example to deploy httpparty gem to layer and use it in exampl
 #### Checkout or Download this example project
 
 ```bash
-  git clone https://github.com/navarasu/serverless-ruby-examples.git
+  git clone https://github.com/navarasu/serverless-ruby.git
 ```
 
 #### Navigate to the project and install plugin 
 
 ```bash
- cd serverless-ruby-examples/deploy_http_party
+ cd serverless-ruby/deploy_http_party
  sls plugin install -n serverless-ruby-layer
 ```
 
