@@ -10,7 +10,7 @@ provider:
 custom:
   rubyLayer:
     exclude_functions:
-      - hello1
+      - hello3
 
 functions:
   hello1:
