@@ -1,4 +1,4 @@
-service: using-docker-file 
+service: use-docker-file
 
 plugins:
   - serverless-ruby-layer
