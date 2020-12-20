@@ -1,8 +1,7 @@
-service: using-docker
+service: use-docker
 
 plugins:
   - serverless-ruby-layer
-
 custom:
   rubyLayer:
     use_docker: true

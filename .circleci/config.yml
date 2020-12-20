@@ -9,6 +9,8 @@ jobs:
       - image: cimg/ruby:2.5-node
     steps:
       - checkout
+      - setup_remote_docker:
+          version: 19.03.13
       - node/install-packages
       - run: sudo npm install -g serverless
       - run: sudo chown -R circleci:circleci /home/circleci/project/
