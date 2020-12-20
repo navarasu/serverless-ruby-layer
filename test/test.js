@@ -48,7 +48,11 @@ describe('serverless package', function () {
     it (`should bundle gem and configure layer for ${folder} example`, function() { 
       this.timeout(240000);
       let context_path = path.join(this.test_path, folder)
-      options= {cwd: context_path, encoding : 'utf8',env: {...process.env, SLS_DEBUG: '*'}}
+      let env = process.env
+      if (folder != 'use-docker'){
+        env.SLS_DEBUG = '*'
+      }
+      options= {cwd: context_path, encoding : 'utf8',env: env }
       runCommand('npm',['link','serverless-ruby-layer'],options)
       runCommand('serverless',['package'],options)
       let dot_serverless_path = path.join(context_path,'.serverless')
