@@ -15,6 +15,9 @@ let test_data = [
 
   { folder: 'use-docker-with-yums', gem_zip_dirs: [ '/', '/build_info/', '/doc/', '/extensions/', '/gems/',
     '/specifications/', '/gems/pg/', '/extensions/x86_64-linux/', 'lib/', 'lib/libpq.so.5' ], },
+
+  { folder: 'use-docker-file', gem_zip_dirs: [ '/', '/build_info/', '/doc/', '/extensions/', '/gems/',
+    '/specifications/', '/gems/pg/', '/extensions/x86_64-linux/', 'lib/', 'lib/libpq.so.5' ], },
 ]
 
 describe('serverless package', function () {
