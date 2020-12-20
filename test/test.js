@@ -26,6 +26,11 @@ let test_data = [
   { folder: 'include-functions', gem_zip_dirs: ['/','/bin/','/build_info/','/doc/','/extensions/', '/gems/',
     '/specifications/','/gems/httparty/', '/gems/mime-types-data/', '/gems/multi_xml/', '/gems/mime-types/'],
     function_files: ['handler1.rb', 'handler2.rb', 'handler3.rb'], include_functions: ['Hello1', 'Hello2'],
+    exclude_functions: ['Hello3']},
+
+  {folder: 'exclude-functions', gem_zip_dirs: ['/','/bin/','/build_info/','/doc/','/extensions/', '/gems/',
+    '/specifications/','/gems/httparty/', '/gems/mime-types-data/', '/gems/multi_xml/', '/gems/mime-types/'],
+    function_files: ['handler1.rb', 'handler2.rb', 'handler3.rb'], include_functions: ['Hello1', 'Hello2'],
     exclude_functions: ['Hello3']}
 ]
 
@@ -45,7 +50,7 @@ describe('serverless package', function () {
       let context_path = path.join(this.test_path, folder)
       options= {cwd: context_path, encoding : 'utf8',env: {...process.env, SLS_DEBUG: '*'}}
       runCommand('npm',['link','serverless-ruby-layer'],options)
-      runCommand('slss',['package'],options)
+      runCommand('serverless',['package'],options)
       let dot_serverless_path = path.join(context_path,'.serverless')
       let layer_zip_path = path.join(dot_serverless_path,'ruby_layer','gemLayer.zip')
       let function_zip_path = path.join(dot_serverless_path,`${folder}.zip`)

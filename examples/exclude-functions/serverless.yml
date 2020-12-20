@@ -1,4 +1,4 @@
-service: basic 
+service: exclude-functions
 
 plugins:
   - serverless-ruby-layer
