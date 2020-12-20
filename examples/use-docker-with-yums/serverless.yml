@@ -1,4 +1,4 @@
-service: using-docker-file 
+service: use-docker-with-yums 
 
 plugins:
   - serverless-ruby-layer

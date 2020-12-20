@@ -13,7 +13,9 @@ let test_data = [
     '/gems/ffi-compiler/', '/gems/http/', '/gems/http-cookie/', '/gems/http-form_data/', '/gems/http-parser/',
     '/gems/mini_portile2/', '/gems/nokogiri/', '/gems/public_suffix/', '/gems/rake/', '/gems/unf/', '/gems/unf_ext/' ], },
 
-  ]
+  { folder: 'use-docker-with-yums', gem_zip_dirs: [ '/', '/build_info/', '/doc/', '/extensions/', '/gems/',
+    '/specifications/', '/gems/pg/', '/extensions/x86_64-linux/', 'lib/', 'lib/libpq.so.5' ], },
+]
 
 describe('serverless package', function () {
   before(function () {

@@ -31,6 +31,8 @@ function readZip(filePath){
                           check.push(relativePath)
                       } else if (relativePath.split(path.sep).length <= 1) {
                             check.push(relativePath)
+                      } else if (relativePath.split(path.sep)[0] == 'lib'){
+                        check.push(relativePath)
                       }
                     })
                     return check
