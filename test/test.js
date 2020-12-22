@@ -49,7 +49,7 @@ describe('serverless package', function () {
       this.timeout(240000);
       let context_path = path.join(this.test_path, folder)
       let env = process.env
-      if (folder != 'use-docker'){
+      if (!['use-docker','basic'].includes(folder)) {
         env.SLS_DEBUG = '*'
       }
       options= {cwd: context_path, encoding : 'utf8',env: env }
