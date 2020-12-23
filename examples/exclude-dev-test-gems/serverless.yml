@@ -1,0 +1,12 @@
+service: exclude-dev-test-gems
+
+plugins:
+  - serverless-ruby-layer
+
+provider:
+  name: aws
+  runtime: ruby2.5
+
+functions:
+  hello:
+    handler: handler.hello
