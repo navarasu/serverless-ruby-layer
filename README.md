@@ -2,7 +2,7 @@
 
 [![serverless](http://public.serverless.com/badges/v3.svg)](http://www.serverless.com)  [![npm](https://img.shields.io/npm/v/serverless-ruby-layer.svg)](https://www.npmjs.com/package/serverless-ruby-layer) [![Build Status](https://img.shields.io/circleci/build/github/navarasu/serverless-ruby-layer)](https://circleci.com/gh/navarasu/serverless-ruby-layer) [![Coverage Status](https://coveralls.io/repos/github/navarasu/serverless-ruby-layer/badge.svg?branch=master)](https://coveralls.io/github/navarasu/serverless-ruby-layer?branch=master) [![MIT License](https://img.shields.io/npm/l/serverless-ruby-layer)](https://github.com/navarasu/serverless-ruby-layer/blob/master/LICENSE)
 
-A Serverless Plugin to bundle ruby gems from Gemfile and deploy it to the lambda layer automatically while running `serverless deploy`.
+A Serverless Plugin which bundles ruby gems from Gemfile and deploys them to the lambda layer automatically while running `serverless deploy`.
 
 It auto-configures the AWS lambda layer and RUBY_PATH to all the functions.
 
@@ -71,18 +71,18 @@ custom:
     use_docker: true
   ```
 
-For more details, refer the docs [here](https://navarasu.github.io/serverless-ruby-layer/#/configuration)
+For more detailse refer the docs [here](https://navarasu.github.io/serverless-ruby-layer/#/configuration)
 
 
 ## Usage
 
 Using the custom configuration, the plugin can be utilized for below cases,
-* Using locallly installed bundler for gems which native  extensions  - [Example](https://github.com/navarasu/serverless-ruby-layer/blob/master/examples/basic) - [Docs](https://navarasu.github.io/serverless-ruby-layer/#/use_local_bundler)
-* Using Docker for gems with OS native C extensions or system libraries like `http`, `Nokogiri` - [Example](https://github.com/navarasu/serverless-ruby-layer/blob/master/examples/use_docker) - [Docs](https://navarasu.github.io/serverless-ruby-layer/#/use_docker)
-* Preinstall OS packages (yum packages) for gems which requires OS native system libraries like `pg`, `mysql`, `RMagick` - [Example](https://github.com/navarasu/serverless-ruby-layer/blob/master/examples/use_docker_with_yums) - [Docs](https://navarasu.github.io/serverless-ruby-layer/#/use_docker_with_yums)
-* Using Dockerfile for gems which with other OS Linux image or system libraries and utilities -  [Example](https://github.com/navarasu/serverless-ruby-layer/blob/master/examples/use_docker_file) - [Docs](https://navarasu.github.io/serverless-ruby-layer/#/use_docker_file)
-* Include / Exclude specific functions from layer configuration - [Include Example](https://github.com/navarasu/serverless-ruby-layer/blob/master/examples/include_functions) , [Exclude Example](https://github.com/navarasu/serverless-ruby-layer/blob/master/examples/exclude_functions) - [Docs](https://navarasu.github.io/serverless-ruby-layer/#/include_exclude)
-
+* Using locally installed bundler for gems without any native extensions - [Example](https://github.com/navarasu/serverless-ruby-layer/blob/master/examples/basic) - [Docs](https://navarasu.github.io/serverless-ruby-layer/#/use_local_bundler)
+* Using Docker for gems with OS native C extensions or system libraries like `http`, `Nokogiri` - [Example](https://github.com/navarasu/serverless-ruby-layer/blob/master/examples/use_docker) - [Docs](https://navarasu.github.io/serverless-ruby-layer/#/use-docker)
+* Preinstall OS packages (yum packages) for gems which requires OS native system libraries like `pg`, `mysql`, `RMagick` - [Example](https://github.com/navarasu/serverless-ruby-layer/blob/master/examples/use_docker_with_yums) - [Docs](https://navarasu.github.io/serverless-ruby-layer/#/use-docker-with-yums)
+* Using Dockerfile for gems which with other OS Linux image or system libraries and utilities -  [Example](https://github.com/navarasu/serverless-ruby-layer/blob/master/examples/use-docker-file) - [Docs](https://navarasu.github.io/serverless-ruby-layer/#/use_docker_file)
+* Include / Exclude specific functions from layer configuration - [Include Example](https://github.com/navarasu/serverless-ruby-layer/blob/master/examples/include-functions) , [Exclude Example](https://github.com/navarasu/serverless-ruby-layer/blob/master/examples/exclude-functions) - [Docs](https://navarasu.github.io/serverless-ruby-layer/#/include_exclude)
+* Exclude test and development related gems from layer  - [Example](https://github.com/navarasu/serverless-ruby-layer/blob/master/examples/exclude-dev-test-gems) - [Docs](https://navarasu.github.io/serverless-ruby-layer/#/exclude_dev_test_gems)
 
 ## Contributing
 
