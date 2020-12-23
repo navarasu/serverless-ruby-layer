@@ -31,7 +31,12 @@ let test_data = [
   {folder: 'exclude-functions', gem_zip_dirs: ['/','/bin/','/build_info/','/doc/','/extensions/', '/gems/',
     '/specifications/','/gems/httparty/', '/gems/mime-types-data/', '/gems/multi_xml/', '/gems/mime-types/'],
     function_files: ['handler1.rb', 'handler2.rb', 'handler3.rb'], include_functions: ['Hello1', 'Hello2'],
-    exclude_functions: ['Hello3']}
+    exclude_functions: ['Hello3']},
+
+  { folder: 'exclude-dev-test-gems', gem_zip_dirs: ['/','/bin/','/build_info/','/doc/','/extensions/', '/gems/',
+    '/specifications/','/gems/httparty/', '/gems/mime-types-data/', '/gems/multi_xml/', '/gems/mime-types/'],
+    function_files: ['handler.rb'], include_functions: ['Hello'], exclude_functions:[] },
+
 ]
 
 describe('serverless package', function () {

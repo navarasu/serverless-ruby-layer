@@ -1,4 +1,4 @@
-service: basic 
+service: exclude-dev-test-gems
 
 plugins:
   - serverless-ruby-layer
