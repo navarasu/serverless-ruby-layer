@@ -1,0 +1,15 @@
+service: use-docker
+
+plugins:
+  - serverless-ruby-layer
+custom:
+  rubyLayer:
+    use_docker: true
+    
+provider:
+  name: aws
+  runtime: ruby2.5
+
+functions:
+  hello:
+    handler: handler.hello
