@@ -1,10 +1,7 @@
-service: use-docker-with-gemfile-lock
+service: basic-with-gemfile-lock
 
 plugins:
   - serverless-ruby-layer
-custom:
-  rubyLayer:
-    use_docker: true
 
 provider:
   name: aws

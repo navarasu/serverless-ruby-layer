@@ -37,6 +37,12 @@ let test_data = [
     '/specifications/','/gems/httparty/', '/gems/mime-types-data/', '/gems/multi_xml/', '/gems/mime-types/'],
     function_files: ['handler.rb'], include_functions: ['Hello'], exclude_functions:[] },
 
+  { folder: 'basic-with-gemfile-lock', gem_zip_dirs: ['/','/bin/','/build_info/','/doc/','/extensions/', '/gems/', '/specifications/','/gems/httparty-0.18.1/', '/gems/mime-types-data-3.2020.1104/', '/gems/multi_xml-0.6.0/', '/gems/mime-types-3.3.1/'],
+    function_files: ['handler.rb'], include_functions: ['Hello'], exclude_functions:[], check_version: true },
+
+{ folder: 'use-docker-with-gemfile-lock', gem_zip_dirs: ['/','/bin/','/build_info/','/doc/','/extensions/', '/gems/', '/specifications/','/gems/httparty-0.18.1/', '/gems/mime-types-data-3.2020.1104/', '/gems/multi_xml-0.6.0/', '/gems/mime-types-3.3.1/'],
+    function_files: ['handler.rb'], include_functions: ['Hello'], exclude_functions:[], check_version: true },
+
 ]
 
 describe('serverless package', function () {
@@ -49,7 +55,7 @@ describe('serverless package', function () {
     fs.copySync('examples',this.test_path)
   })
 
-  test_data.forEach(({folder, gem_zip_dirs,function_files, include_functions, exclude_functions}) => {
+  test_data.forEach(({folder, gem_zip_dirs,function_files, include_functions, exclude_functions, check_version }) => {
     it (`should bundle gem and configure layer for ${folder} example`, function() { 
       this.timeout(240000);
       let context_path = path.join(this.test_path, folder)
@@ -70,8 +76,10 @@ describe('serverless package', function () {
       run_time ='2.5'
       value = readZip(layer_zip_path)
         .then(function(data){
-          assert.deepEqual(gem_zip_dirs.map(data => data.startsWith('lib')? data : 'ruby/'+run_time+'.0'+data).concat(['ruby/']).sort(),
-            data.map(data => data.replace(/-\d.*\d/g, '')).sort())
+          if (!check_version) {
+            data = data.map(data => data.replace(/-\d.*\d/g, ''))
+          }
+          assert.deepEqual(gem_zip_dirs.map(data => data.startsWith('lib')? data : 'ruby/'+run_time+'.0'+data).concat(['ruby/']).sort(),data.sort())
         })
       let serverless_config = JSON.parse(fs.readFileSync(path.join(dot_serverless_path,'serverless-state.json')));
       assert.deepEqual(serverless_config['service']['layers']['gem']['package']['artifact'], path.resolve(layer_zip_path))
