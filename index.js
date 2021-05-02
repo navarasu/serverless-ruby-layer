@@ -5,7 +5,8 @@ class ServerlessRubyBundler {
   get options() {
     const options = Object.assign(
       {
-        use_docker: false
+        use_docker: false,
+        ignore_gemfile_lock: false
       },
       (this.serverless.service.custom &&
         this.serverless.service.custom.rubyLayer) ||

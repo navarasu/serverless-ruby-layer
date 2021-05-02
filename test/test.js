@@ -43,6 +43,14 @@ let test_data = [
 { folder: 'use-docker-with-gemfile-lock', gem_zip_dirs: ['/','/bin/','/build_info/','/doc/','/extensions/', '/gems/', '/specifications/','/gems/httparty-0.18.1/', '/gems/mime-types-data-3.2020.1104/', '/gems/multi_xml-0.6.0/', '/gems/mime-types-3.3.1/'],
     function_files: ['handler.rb'], include_functions: ['Hello'], exclude_functions:[], check_version: true },
 
+  { folder: 'basic-ignore-gemfile-lock', gem_zip_dirs: ['/','/bin/','/build_info/','/doc/','/extensions/', '/gems/', '/specifications/','/gems/httparty-0.18.1/', '/gems/mime-types-data-3.2021.0225/', '/gems/multi_xml-0.6.0/', '/gems/mime-types-3.3.1/'],
+    function_files: ['handler.rb'], include_functions: ['Hello'], exclude_functions:[], check_version: true },
+
+ { folder: 'use-docker-ignore-gemfile-lock', gem_zip_dirs: ['/','/bin/','/build_info/','/doc/','/extensions/', '/gems/', '/specifications/','/gems/httparty-0.18.1/', '/gems/mime-types-data-3.2021.0225/', '/gems/multi_xml-0.6.0/', '/gems/mime-types-3.3.1/'],
+     function_files: ['handler.rb'], include_functions: ['Hello'], exclude_functions:[], check_version: true },
+
+
+
 ]
 
 describe('serverless package', function () {
