@@ -38,10 +38,10 @@ let test_data = [
     function_files: ['handler.rb'], include_functions: ['Hello'], exclude_functions:[] },
 
   { folder: 'basic-with-gemfile-lock', gem_zip_dirs: ['/','/bin/','/build_info/','/doc/','/extensions/', '/gems/', '/specifications/','/gems/httparty-0.18.1/', '/gems/mime-types-data-3.2020.1104/', '/gems/multi_xml-0.6.0/', '/gems/mime-types-3.3.1/'],
-    function_files: ['handler.rb'], include_functions: ['Hello'], exclude_functions:[], check_version: true },
+    function_files: ['Gemfile', 'Gemfile.lock', 'handler.rb'], include_functions: ['Hello'], exclude_functions:[], check_version: true },
 
 { folder: 'use-docker-with-gemfile-lock', gem_zip_dirs: ['/','/bin/','/build_info/','/doc/','/extensions/', '/gems/', '/specifications/','/gems/httparty-0.18.1/', '/gems/mime-types-data-3.2020.1104/', '/gems/multi_xml-0.6.0/', '/gems/mime-types-3.3.1/'],
-    function_files: ['handler.rb'], include_functions: ['Hello'], exclude_functions:[], check_version: true },
+    function_files: ['Gemfile', 'Gemfile.lock', 'handler.rb'], include_functions: ['Hello'], exclude_functions:[], check_version: true },
 
   { folder: 'basic-ignore-gemfile-lock', gem_zip_dirs: ['/','/bin/','/build_info/','/doc/','/extensions/', '/gems/', '/specifications/','/gems/httparty-0.18.1/', '/gems/mime-types-data-3.2021.0225/', '/gems/multi_xml-0.6.0/', '/gems/mime-types-3.3.1/'],
     function_files: ['handler.rb'], include_functions: ['Hello'], exclude_functions:[], check_version: true },
@@ -49,7 +49,8 @@ let test_data = [
  { folder: 'use-docker-ignore-gemfile-lock', gem_zip_dirs: ['/','/bin/','/build_info/','/doc/','/extensions/', '/gems/', '/specifications/','/gems/httparty-0.18.1/', '/gems/mime-types-data-3.2021.0225/', '/gems/multi_xml-0.6.0/', '/gems/mime-types-3.3.1/'],
      function_files: ['handler.rb'], include_functions: ['Hello'], exclude_functions:[], check_version: true },
 
-
+  { folder: 'bundler-require-all', gem_zip_dirs: ['/','/bin/','/build_info/','/doc/','/extensions/', '/gems/', '/specifications/','/gems/httparty-0.18.1/', '/gems/mime-types-data-3.2020.1104/', '/gems/multi_xml-0.6.0/', '/gems/mime-types-3.3.1/','/gems/nokogiri-1.11.3-x86_64-linux/', '/gems/racc-1.5.2/', '/extensions/x86_64-linux/', '/gems/mini_portile2-2.5.1/' ],
+    function_files: ['Gemfile', 'Gemfile.lock', 'handler.rb'], include_functions: ['Hello'], exclude_functions:[], check_version: true },
 
 ]
 
