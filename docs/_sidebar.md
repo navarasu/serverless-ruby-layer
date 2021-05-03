@@ -9,5 +9,6 @@
   * [Using Custom Dockerfile](use_docker_file)
   * [Include / Exclude functions](include_exclude)
   * [Exclude test gems / development gems](exclude_dev_test_gems)
+  * [Bundler.require all gems](bundler_require_all)
 * [Configuration](/configuration.md)
 * [Release Notes](/release_notes.md)
