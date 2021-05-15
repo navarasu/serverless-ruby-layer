@@ -1,4 +1,4 @@
-service: use-docker-with-yums 
+service: use-docker-with-yums-pg-ruby2-5
 
 plugins:
   - serverless-ruby-layer
