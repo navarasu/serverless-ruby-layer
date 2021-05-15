@@ -1,0 +1,26 @@
+service: use-docker-with-yums-pg-ruby2-7
+
+plugins:
+  - serverless-ruby-layer
+
+custom:
+  rubyLayer:
+    use_docker: true
+    docker_yums:
+      - postgresql-devel
+    native_libs:
+      - /usr/lib64/libpq.so.5
+      - /usr/lib64/libldap_r-2.4.so.2
+      - /usr/lib64/liblber-2.4.so.2
+      - /usr/lib64/libsasl2.so.3
+      - /usr/lib64/libssl3.so
+      - /usr/lib64/libsmime3.so
+      - /usr/lib64/libnss3.so
+
+provider:
+  name: aws
+  runtime: ruby2.7
+
+functions:
+  hello:
+    handler: handler.hello
