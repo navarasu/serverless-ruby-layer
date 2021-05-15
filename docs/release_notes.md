@@ -1,5 +1,11 @@
 # Release notes
 
+### [1.5.0](https://www.npmjs.com/package/serverless-ruby-layer/v/1.5.0)
+### Gemfile.lock Release
+* Used `Gemfile.lock` is used for bundle install if the file present
+* ` ignore_gemfile_lock: true` to ignore `Gemfile.lock` usage for bundle install
+* Added pg deploy example for ruby2.7 runtime
+
 ### [1.4.0](https://www.npmjs.com/package/serverless-ruby-layer/v/1.4.0)
 ### Docker Inside Docker Release
 * Replaced docker volume mount with docker cp to support CI (Docker inside Docker) environment.
