@@ -6,6 +6,7 @@
   * [Using Local Bundler](use_local_bundler)
   * [Using Docker Bundler](use_docker)
   * [Docker with Yums installed](use_docker_with_yums)
+  * [Docker with ENV passthrough](use_docker_with_env_passthrough)
   * [Using Custom Dockerfile](use_docker_file)
   * [Using Custom Dockerfile With Build Args](use_docker_file_with_build_args)
   * [Include / Exclude functions](include_exclude)
