@@ -5,56 +5,60 @@ const { runCommand,readZip } = require('./helper');
 
 let test_data = [
 
-  { folder: 'basic', gem_zip_dirs: ['/','/bin/','/build_info/','/doc/','/extensions/', '/gems/',
-    '/specifications/','/gems/httparty/', '/gems/mime-types-data/', '/gems/multi_xml/', '/gems/mime-types/'],
+  //{ folder: 'basic', gem_zip_dirs: ['/','/bin/','/build_info/','/doc/','/extensions/', '/gems/',
+    //'/specifications/','/gems/httparty/', '/gems/mime-types-data/', '/gems/multi_xml/', '/gems/mime-types/'],
+    //function_files: ['handler.rb'], include_functions: ['Hello'], exclude_functions:[] },
+
+  //{ folder: 'use-docker', gem_zip_dirs: [ '/', '/bin/', '/build_info/', '/doc/', '/extensions/', '/gems/',
+    //'/specifications/', '/extensions/x86_64-linux/', '/gems/addressable/', '/gems/domain_name/', '/gems/ffi/',
+    //'/gems/ffi-compiler/', '/gems/http/', '/gems/http-cookie/', '/gems/http-form_data/', '/gems/http-parser/',
+    //'/gems/mini_portile2/', '/gems/nokogiri/', '/gems/public_suffix/', '/gems/rake/', '/gems/unf/', '/gems/unf_ext/' ],
+    //function_files: ['handler.rb'], include_functions: ['Hello'], exclude_functions:[] },
+
+  //{ folder: 'use-docker-with-yums-pg-ruby2-5', gem_zip_dirs: [ '/', '/build_info/', '/doc/', '/extensions/', '/gems/',
+    //'/specifications/', '/gems/pg/', '/extensions/x86_64-linux/', 'lib/', 'lib/libpq.so.5' ],
+    //function_files: ['handler.rb'], include_functions: ['Hello'], exclude_functions:[] },
+
+  //{ folder: 'use-docker-with-yums-pg-ruby2-7', gem_zip_dirs: [ '/', '/build_info/', '/doc/', '/extensions/', '/gems/', '/plugins/',
+    //'/specifications/', '/gems/pg/', '/extensions/x86_64-linux/', 'lib/', 'lib/libpq.so.5', 'lib/liblber', 'lib/libldap_r', 'lib/libnss3.so', 'lib/libsasl2.so.3', 'lib/libsmime3.so', 'lib/libssl3.so' ],
+    //function_files: ['handler.rb'], include_functions: ['Hello'], exclude_functions:[] },
+
+  //{ folder: 'use-docker-file', gem_zip_dirs: [ '/', '/build_info/', '/doc/', '/extensions/', '/gems/',
+    //'/specifications/', '/gems/pg/', '/extensions/x86_64-linux/', 'lib/', 'lib/libpq.so.5' ],
+    //function_files: ['handler.rb'], include_functions: ['Hello'], exclude_functions:[] },
+
+  { folder: 'use-docker-file-with-build-args', gem_zip_dirs: [ '/', '/build_info/', '/doc/', '/extensions/', '/gems/', '/plugins/',
+    '/specifications/', '/gems/uuidtools/', 'lib/', 'lib/test_arg_dummy', 'lib/test_arg_present' ],
     function_files: ['handler.rb'], include_functions: ['Hello'], exclude_functions:[] },
 
-  { folder: 'use-docker', gem_zip_dirs: [ '/', '/bin/', '/build_info/', '/doc/', '/extensions/', '/gems/',
-    '/specifications/', '/extensions/x86_64-linux/', '/gems/addressable/', '/gems/domain_name/', '/gems/ffi/',
-    '/gems/ffi-compiler/', '/gems/http/', '/gems/http-cookie/', '/gems/http-form_data/', '/gems/http-parser/',
-    '/gems/mini_portile2/', '/gems/nokogiri/', '/gems/public_suffix/', '/gems/rake/', '/gems/unf/', '/gems/unf_ext/' ],
-    function_files: ['handler.rb'], include_functions: ['Hello'], exclude_functions:[] },
+  //{ folder: 'include-functions', gem_zip_dirs: ['/','/bin/','/build_info/','/doc/','/extensions/', '/gems/',
+    //'/specifications/','/gems/httparty/', '/gems/mime-types-data/', '/gems/multi_xml/', '/gems/mime-types/'],
+    //function_files: ['handler1.rb', 'handler2.rb', 'handler3.rb'], include_functions: ['Hello1', 'Hello2'],
+    //exclude_functions: ['Hello3']},
 
-  { folder: 'use-docker-with-yums-pg-ruby2-5', gem_zip_dirs: [ '/', '/build_info/', '/doc/', '/extensions/', '/gems/',
-    '/specifications/', '/gems/pg/', '/extensions/x86_64-linux/', 'lib/', 'lib/libpq.so.5' ],
-    function_files: ['handler.rb'], include_functions: ['Hello'], exclude_functions:[] },
+  //{folder: 'exclude-functions', gem_zip_dirs: ['/','/bin/','/build_info/','/doc/','/extensions/', '/gems/',
+    //'/specifications/','/gems/httparty/', '/gems/mime-types-data/', '/gems/multi_xml/', '/gems/mime-types/'],
+    //function_files: ['handler1.rb', 'handler2.rb', 'handler3.rb'], include_functions: ['Hello1', 'Hello2'],
+    //exclude_functions: ['Hello3']},
 
-  { folder: 'use-docker-with-yums-pg-ruby2-7', gem_zip_dirs: [ '/', '/build_info/', '/doc/', '/extensions/', '/gems/', '/plugins/',
-    '/specifications/', '/gems/pg/', '/extensions/x86_64-linux/', 'lib/', 'lib/libpq.so.5', 'lib/liblber', 'lib/libldap_r', 'lib/libnss3.so', 'lib/libsasl2.so.3', 'lib/libsmime3.so', 'lib/libssl3.so' ],
-    function_files: ['handler.rb'], include_functions: ['Hello'], exclude_functions:[] },
+  //{ folder: 'exclude-dev-test-gems', gem_zip_dirs: ['/','/bin/','/build_info/','/doc/','/extensions/', '/gems/',
+    //'/specifications/','/gems/httparty/', '/gems/mime-types-data/', '/gems/multi_xml/', '/gems/mime-types/'],
+    //function_files: ['handler.rb'], include_functions: ['Hello'], exclude_functions:[] },
 
-  { folder: 'use-docker-file', gem_zip_dirs: [ '/', '/build_info/', '/doc/', '/extensions/', '/gems/',
-    '/specifications/', '/gems/pg/', '/extensions/x86_64-linux/', 'lib/', 'lib/libpq.so.5' ],
-    function_files: ['handler.rb'], include_functions: ['Hello'], exclude_functions:[] },
+  //{ folder: 'basic-with-gemfile-lock', gem_zip_dirs: ['/','/bin/','/build_info/','/doc/','/extensions/', '/gems/', '/specifications/','/gems/httparty-0.18.1/', '/gems/mime-types-data-3.2020.1104/', '/gems/multi_xml-0.6.0/', '/gems/mime-types-3.3.1/'],
+    //function_files: ['Gemfile', 'Gemfile.lock', 'handler.rb'], include_functions: ['Hello'], exclude_functions:[], check_version: true },
 
-  { folder: 'include-functions', gem_zip_dirs: ['/','/bin/','/build_info/','/doc/','/extensions/', '/gems/',
-    '/specifications/','/gems/httparty/', '/gems/mime-types-data/', '/gems/multi_xml/', '/gems/mime-types/'],
-    function_files: ['handler1.rb', 'handler2.rb', 'handler3.rb'], include_functions: ['Hello1', 'Hello2'],
-    exclude_functions: ['Hello3']},
+  //{ folder: 'use-docker-with-gemfile-lock', gem_zip_dirs: ['/','/bin/','/build_info/','/doc/','/extensions/', '/gems/', '/specifications/','/gems/httparty-0.18.1/', '/gems/mime-types-data-3.2020.1104/', '/gems/multi_xml-0.6.0/', '/gems/mime-types-3.3.1/'],
+    //function_files: ['Gemfile', 'Gemfile.lock', 'handler.rb'], include_functions: ['Hello'], exclude_functions:[], check_version: true },
 
-  {folder: 'exclude-functions', gem_zip_dirs: ['/','/bin/','/build_info/','/doc/','/extensions/', '/gems/',
-    '/specifications/','/gems/httparty/', '/gems/mime-types-data/', '/gems/multi_xml/', '/gems/mime-types/'],
-    function_files: ['handler1.rb', 'handler2.rb', 'handler3.rb'], include_functions: ['Hello1', 'Hello2'],
-    exclude_functions: ['Hello3']},
+  //{ folder: 'basic-ignore-gemfile-lock', gem_zip_dirs: ['/','/bin/','/build_info/','/doc/','/extensions/', '/gems/', '/specifications/','/gems/httparty-0.18.1/', '/gems/mime-types-data-3.2021.0225/', '/gems/multi_xml-0.6.0/', '/gems/mime-types-3.3.1/'],
+    //function_files: ['handler.rb'], include_functions: ['Hello'], exclude_functions:[], check_version: true },
 
-  { folder: 'exclude-dev-test-gems', gem_zip_dirs: ['/','/bin/','/build_info/','/doc/','/extensions/', '/gems/',
-    '/specifications/','/gems/httparty/', '/gems/mime-types-data/', '/gems/multi_xml/', '/gems/mime-types/'],
-    function_files: ['handler.rb'], include_functions: ['Hello'], exclude_functions:[] },
+  //{ folder: 'use-docker-ignore-gemfile-lock', gem_zip_dirs: ['/','/bin/','/build_info/','/doc/','/extensions/', '/gems/', '/specifications/','/gems/httparty-0.18.1/', '/gems/mime-types-data-3.2021.0225/', '/gems/multi_xml-0.6.0/', '/gems/mime-types-3.3.1/'],
+     //function_files: ['handler.rb'], include_functions: ['Hello'], exclude_functions:[], check_version: true },
 
-  { folder: 'basic-with-gemfile-lock', gem_zip_dirs: ['/','/bin/','/build_info/','/doc/','/extensions/', '/gems/', '/specifications/','/gems/httparty-0.18.1/', '/gems/mime-types-data-3.2020.1104/', '/gems/multi_xml-0.6.0/', '/gems/mime-types-3.3.1/'],
-    function_files: ['Gemfile', 'Gemfile.lock', 'handler.rb'], include_functions: ['Hello'], exclude_functions:[], check_version: true },
-
-{ folder: 'use-docker-with-gemfile-lock', gem_zip_dirs: ['/','/bin/','/build_info/','/doc/','/extensions/', '/gems/', '/specifications/','/gems/httparty-0.18.1/', '/gems/mime-types-data-3.2020.1104/', '/gems/multi_xml-0.6.0/', '/gems/mime-types-3.3.1/'],
-    function_files: ['Gemfile', 'Gemfile.lock', 'handler.rb'], include_functions: ['Hello'], exclude_functions:[], check_version: true },
-
-  { folder: 'basic-ignore-gemfile-lock', gem_zip_dirs: ['/','/bin/','/build_info/','/doc/','/extensions/', '/gems/', '/specifications/','/gems/httparty-0.18.1/', '/gems/mime-types-data-3.2021.0225/', '/gems/multi_xml-0.6.0/', '/gems/mime-types-3.3.1/'],
-    function_files: ['handler.rb'], include_functions: ['Hello'], exclude_functions:[], check_version: true },
-
- { folder: 'use-docker-ignore-gemfile-lock', gem_zip_dirs: ['/','/bin/','/build_info/','/doc/','/extensions/', '/gems/', '/specifications/','/gems/httparty-0.18.1/', '/gems/mime-types-data-3.2021.0225/', '/gems/multi_xml-0.6.0/', '/gems/mime-types-3.3.1/'],
-     function_files: ['handler.rb'], include_functions: ['Hello'], exclude_functions:[], check_version: true },
-
-  { folder: 'bundler-require-all', gem_zip_dirs: ['/','/bin/','/build_info/','/doc/','/extensions/', '/gems/', '/specifications/','/gems/httparty-0.18.1/', '/gems/mime-types-data-3.2020.1104/', '/gems/multi_xml-0.6.0/', '/gems/mime-types-3.3.1/','/gems/nokogiri-1.11.3-x86_64-linux/', '/gems/racc-1.5.2/', '/extensions/x86_64-linux/', '/gems/mini_portile2-2.5.1/' ],
-    function_files: ['Gemfile', 'Gemfile.lock', 'handler.rb'], include_functions: ['Hello'], exclude_functions:[], check_version: true },
+  //{ folder: 'bundler-require-all', gem_zip_dirs: ['/','/bin/','/build_info/','/doc/','/extensions/', '/gems/', '/specifications/','/gems/httparty-0.18.1/', '/gems/mime-types-data-3.2020.1104/', '/gems/multi_xml-0.6.0/', '/gems/mime-types-3.3.1/','/gems/nokogiri-1.11.3-x86_64-linux/', '/gems/racc-1.5.2/', '/extensions/x86_64-linux/', '/gems/mini_portile2-2.5.1/' ],
+    //function_files: ['Gemfile', 'Gemfile.lock', 'handler.rb'], include_functions: ['Hello'], exclude_functions:[], check_version: true },
 
 ]
 
