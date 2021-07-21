@@ -57,7 +57,7 @@ gem 'uuidtools'
 #### ** handler.rb **
 
 ```ruby
-require 'pg'
+require 'uuidtools'
 
 def hello(event:, context:)
   { statusCode: 200, body: {
