@@ -7,6 +7,7 @@
   * [Using Docker Bundler](use_docker)
   * [Docker with Yums installed](use_docker_with_yums)
   * [Using Custom Dockerfile](use_docker_file)
+  * [Using Custom Dockerfile With Build Args](use_docker_file_with_build_args)
   * [Include / Exclude functions](include_exclude)
   * [Exclude test gems / development gems](exclude_dev_test_gems)
   * [Bundler.require all gems](bundler_require_all)
