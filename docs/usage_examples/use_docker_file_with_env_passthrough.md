@@ -14,7 +14,7 @@ plugins:
 custom:
   rubyLayer:
     use_docker: true
-    docker_env_passthrough:
+    docker_env_variable:
       - SERVERLESS_RUBY_LAYER_TEST_ARG
 
 provider:
