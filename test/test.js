@@ -31,6 +31,10 @@ let test_data = [
     '/specifications/', '/gems/uuidtools/', 'lib/', 'lib/test_arg_dummy', 'lib/test_arg_present' ],
     function_files: ['handler.rb'], include_functions: ['Hello'], exclude_functions:[] },
 
+  { folder: 'use-docker-with-env-passthrough', gem_zip_dirs: [ '/', '/build_info/', '/doc/', '/extensions/', '/gems/', '/plugins/',
+    '/specifications/', '/gems/uuidtools/' ],
+    function_files: ['handler.rb'], include_functions: ['Hello'], exclude_functions:[] },
+
   { folder: 'include-functions', gem_zip_dirs: ['/','/bin/','/build_info/','/doc/','/extensions/', '/gems/',
     '/specifications/','/gems/httparty/', '/gems/mime-types-data/', '/gems/multi_xml/', '/gems/mime-types/'],
     function_files: ['handler1.rb', 'handler2.rb', 'handler3.rb'], include_functions: ['Hello1', 'Hello2'],
