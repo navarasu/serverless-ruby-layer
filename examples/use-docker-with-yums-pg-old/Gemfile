@@ -1,2 +1,2 @@
 source 'https://rubygems.org'
-gem 'uuidtools'
+gem 'pg', '1.2.3'

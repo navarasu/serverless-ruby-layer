@@ -6,7 +6,7 @@ orbs:
 jobs:
   build-and-test:
     docker:
-      - image: cimg/ruby:2.5-node
+      - image: cimg/ruby:2.7-node
     steps:
       - checkout
       - setup_remote_docker:
