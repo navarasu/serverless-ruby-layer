@@ -1,0 +1,11 @@
+FROM lambci/lambda:build-ruby2.7
+
+RUN gem update bundler
+
+ARG USE_HTTPARTY
+ENV USE_HTTPARTY=${USE_HTTPARTY}
+ARG NOKOGIRI_VERSION
+ENV NOKOGIRI_VERSION=${NOKOGIRI_VERSION}
+
+CMD "/bin/bash"
+

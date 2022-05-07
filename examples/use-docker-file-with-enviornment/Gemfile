@@ -1,0 +1,11 @@
+source 'https://rubygems.org'
+if ENV['USE_HTTPARTY']
+  gem 'httparty', '0.18.1'
+else
+  gem 'http'
+end
+if ENV['NOKOGIRI_VERSION']
+  gem 'nokogiri', ENV['NOKOGIRI_VERSION']
+else
+  gem 'nokogiri'
+end

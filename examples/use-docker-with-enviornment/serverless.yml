@@ -1,0 +1,19 @@
+service: use-docker-with-enviornment
+
+plugins:
+  - serverless-ruby-layer
+
+custom:
+  rubyLayer:
+    use_docker: true
+    environment:
+      - USE_HTTPARTY
+      - NOKOGIRI_VERSION=1.10.10
+
+provider:
+  name: aws
+  runtime: ruby2.7
+
+functions:
+  hello:
+    handler: handler.hello
