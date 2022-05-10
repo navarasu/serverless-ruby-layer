@@ -1,5 +1,12 @@
 # Release notes
 
+### [1.6.0](https://www.npmjs.com/package/serverless-ruby-layer/v/1.6.0)
+### Environment Release
+* Pass environment variable to docker for bundler/ Gemfile
+* Pass environment variable to dockerfile as build args
+* Updated examples for ruby2.7 runtime
+* Fixed bug in clearing cache folder inside gems folder
+
 ### [1.5.0](https://www.npmjs.com/package/serverless-ruby-layer/v/1.5.0)
 ### Gemfile.lock Release
 * Used `Gemfile.lock` is used for bundle install if the file present

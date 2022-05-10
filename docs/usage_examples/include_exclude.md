@@ -16,7 +16,7 @@ plugins:
 
 provider:
   name: aws
-  runtime: ruby2.5
+  runtime: ruby2.7
 
 custom:
   rubyLayer:
@@ -96,7 +96,7 @@ plugins:
 
 provider:
   name: aws
-  runtime: ruby2.5
+  runtime: ruby2.7
 
 custom:
   rubyLayer:
