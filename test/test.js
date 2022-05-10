@@ -59,11 +59,11 @@ let test_data = [
     '/gems/nokogiri-1.11.3-x86_64-linux/', '/gems/racc-1.5.2/', '/extensions/x86_64-linux/', '/gems/mini_portile2-2.5.1/' ],
     function_files: ['Gemfile', 'Gemfile.lock', 'handler.rb'], include_functions: ['Hello'], exclude_functions:[], check_version: true },
 
-  { folder: 'use-docker-with-enviornment', gem_zip_dirs: ['/','/bin/','/build_info/','/doc/','/extensions/', '/gems/', '/plugins/',
+  { folder: 'use-docker-with-environment', gem_zip_dirs: ['/','/bin/','/build_info/','/doc/','/extensions/', '/gems/', '/plugins/',
     '/specifications/','/extensions/x86_64-linux/','/gems/httparty/', '/gems/mime-types-data/', '/gems/multi_xml/', '/gems/mime-types/', 
     '/gems/nokogiri/', '/gems/mini_portile2/'], function_files: ['handler.rb'], include_functions: ['Hello'], exclude_functions:[] },
 
-  { folder: 'use-docker-file-with-enviornment', gem_zip_dirs: ['/','/bin/','/build_info/','/doc/','/extensions/', '/gems/', '/plugins/',
+  { folder: 'use-docker-file-with-environment', gem_zip_dirs: ['/','/bin/','/build_info/','/doc/','/extensions/', '/gems/', '/plugins/',
     '/specifications/','/extensions/x86_64-linux/','/gems/httparty/', '/gems/mime-types-data/', '/gems/multi_xml/', '/gems/mime-types/', 
     '/gems/nokogiri/', '/gems/mini_portile2/'], function_files: ['handler.rb'], include_functions: ['Hello'], exclude_functions:[] },
 ]
