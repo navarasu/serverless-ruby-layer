@@ -20,8 +20,11 @@ class ServerlessRubyBundler {
     this.serverless = serverless;
     this.servicePath = this.serverless.config.servicePath;
     this.warningLogged = false;
-    this.changed = true;
-    this.ruby_layer = path.join(this.servicePath,'.serverless','ruby_layer')
+    this.reasons = [];
+    this.debug = process.env.SLS_DEBUG;
+    this.ruby_layer = path.join(this.servicePath,'.ruby_layer')
+    this.build_path = path.join(this.ruby_layer, 'build')
+    this.gemLayer_zip_path = path.join(this.ruby_layer, 'gemLayer.zip')
     this.cli = this.serverless.cli
 
     this.commands = {
