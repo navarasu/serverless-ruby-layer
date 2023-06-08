@@ -18,6 +18,8 @@ custom:
       - /usr/lib64/libssl3.so
       - /usr/lib64/libsmime3.so
       - /usr/lib64/libnss3.so
+    addtional_libs:
+      - /usr/share/tessdata
 
 provider:
   name: aws

@@ -27,6 +27,7 @@ custom:
 | **docker_yums** | array   | undefined     | List of yum libraries to be preinstalled for gems which require OS native system libraries |
 | **native_bins** | array   | undefined     | Paths of the native executable files that need to be packed in lambda layer along with gems |
 | **native_libs** | array   | undefined     | Paths of the native libraries files that need to be packed in lambda layer along with gems |
+| **additional_files** | array   | undefined     | Paths of any other files you wish to have copied in to the /opt directory. |
 | **docker_file** | string  | undefined     | Path of the custom docker file to be used for bundling gems|
 | **docker_image_name** | string  | ruby-layer:docker | Image tag of the build docker image |
 | **include_functions** | array | all functions  | List of functions to be configured with the gem layer |
