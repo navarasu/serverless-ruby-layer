@@ -14,15 +14,15 @@ let test_data = [
     '/gems/nokogiri-linux/', '/gems/racc/' ,'/gems/public_suffix/', '/gems/rake/', '/gems/unf/', '/gems/unf_ext/' ],
     function_files: ['handler.rb'], include_functions: ['Hello'], exclude_functions:[] },
 
-  // { folder: 'use-docker-with-yums-pg-old', gem_zip_dirs: [ '/', '/build_info/', '/doc/', '/extensions/', '/gems/', '/plugins/',
-  //   '/specifications/', '/gems/pg/', '/extensions/x86_64-linux/', 'lib/', 'lib/libpq.so.5', 'lib/liblber', 'lib/libldap_r',
-  //   'lib/libnss3.so', 'lib/libsasl2.so.3', 'lib/libsmime3.so', 'lib/libssl3.so' ],
-  //   function_files: ['handler.rb'], include_functions: ['Hello'], exclude_functions:[] },
+  { folder: 'use-docker-with-yums-pg-old', gem_zip_dirs: [ '/', '/build_info/', '/doc/', '/extensions/', '/gems/', '/plugins/',
+    '/specifications/', '/gems/pg/', '/extensions/x86_64-linux/', 'lib/', 'lib/libpq.so.5', 'lib/liblber', 'lib/libldap_r',
+    'lib/libnss3.so', 'lib/libsasl2.so.3', 'lib/libsmime3.so', 'lib/libssl3.so' ],
+    function_files: ['handler.rb'], include_functions: ['Hello'], exclude_functions:[] },
 
-  // { folder: 'use-docker-file', gem_zip_dirs: [ '/', '/build_info/', '/doc/', '/extensions/', '/gems/', '/plugins/',
-  //   '/specifications/', '/gems/pg/', '/extensions/x86_64-linux/', 'lib/', 'lib/libpq.so.5', 'lib/liblber', 'lib/libldap_r',
-  //   'lib/libnss3.so', 'lib/libsasl2.so.3', 'lib/libsmime3.so', 'lib/libssl3.so' ],
-  //   function_files: ['handler.rb'], include_functions: ['Hello'], exclude_functions:[] },
+  { folder: 'use-docker-file', gem_zip_dirs: [ '/', '/build_info/', '/doc/', '/extensions/', '/gems/', '/plugins/',
+    '/specifications/', '/gems/pg/', '/extensions/x86_64-linux/', 'lib/', 'lib/libpq.so.5', 'lib/liblber', 'lib/libldap_r',
+    'lib/libnss3.so', 'lib/libsasl2.so.3', 'lib/libsmime3.so', 'lib/libssl3.so' ],
+    function_files: ['handler.rb'], include_functions: ['Hello'], exclude_functions:[] },
 
   // { folder: 'include-functions', gem_zip_dirs: ['/','/bin/','/build_info/','/doc/','/extensions/', '/gems/',
   //   '/specifications/','/gems/httparty/', '/gems/mime-types-data/', '/gems/multi_xml/', '/gems/mime-types/'],
