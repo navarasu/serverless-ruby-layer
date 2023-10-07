@@ -19,7 +19,7 @@ custom:
 
 provider:
   name: aws
-  runtime: ruby3.2
+  runtime: ruby2.7
 
 functions:
   hello:

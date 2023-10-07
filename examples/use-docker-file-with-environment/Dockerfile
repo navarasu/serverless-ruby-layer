@@ -1,4 +1,5 @@
-FROM lambci/lambda:build-ruby2.7
+FROM public.ecr.aws/sam/build-ruby3.2:latest-x86_64
+
 
 RUN gem update bundler
 
