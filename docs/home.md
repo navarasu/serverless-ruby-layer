@@ -41,7 +41,7 @@ plugins:
 
 provider:
   name: aws
-  runtime: ruby2.5
+  runtime: ruby3.2
 
 functions:
   hello:
