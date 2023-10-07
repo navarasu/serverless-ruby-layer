@@ -1,5 +1,10 @@
-<h1><img height="75" src="https://navarasu.github.io/serverless-ruby-layer/assets/serverless-ruby-layer.png" alt="Serverless Ruby Layer"></h1>
-
+<h1>
+<picture>
+  <source media="(prefers-color-scheme: light)" srcset="https://navarasu.github.io/serverless-ruby-layer/assets/serverless-ruby-layer.png">
+  <img height="75" src="https://navarasu.github.io/serverless-ruby-layer/assets/serverless-ruby-layer-wh.png">
+</picture>
+</h1>
+  
 [![serverless](http://public.serverless.com/badges/v3.svg)](http://www.serverless.com)  [![npm](https://img.shields.io/npm/v/serverless-ruby-layer.svg)](https://www.npmjs.com/package/serverless-ruby-layer) [![Build Status](https://img.shields.io/circleci/build/github/navarasu/serverless-ruby-layer)](https://circleci.com/gh/navarasu/serverless-ruby-layer) [![Coverage Status](https://coveralls.io/repos/github/navarasu/serverless-ruby-layer/badge.svg?branch=master)](https://coveralls.io/github/navarasu/serverless-ruby-layer?branch=master) [![MIT License](https://img.shields.io/npm/l/serverless-ruby-layer)](https://github.com/navarasu/serverless-ruby-layer/blob/master/LICENSE)
 
 A Serverless Plugin which bundles ruby gems from Gemfile and deploys them to the lambda layer automatically while running `serverless deploy`.
