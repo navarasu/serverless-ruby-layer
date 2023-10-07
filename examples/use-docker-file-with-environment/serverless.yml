@@ -9,7 +9,7 @@ custom:
     docker_file: Dockerfile
     environment:
       - USE_HTTPARTY
-      - NOKOGIRI_VERSION=1.10.10
+      - NOKOGIRI_VERSION=1.13.10
 
 provider:
   name: aws
