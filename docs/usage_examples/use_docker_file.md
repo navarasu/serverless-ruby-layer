@@ -16,6 +16,8 @@ custom:
   rubyLayer:
     use_docker: true
     docker_file: Dockerfile
+    native_bins:
+      - /usr/bin/pdfinfo
     native_libs:
       - /usr/lib64/libpq.so.5
       - /usr/lib64/libldap_r-2.4.so.2

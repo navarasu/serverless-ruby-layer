@@ -19,6 +19,8 @@ custom:
     use_docker: true
     docker_yums:
       - postgresql-devel
+    native_bins:
+      - /usr/bin/psql
     native_libs:
       - /usr/lib64/libpq.so.5
       - /usr/lib64/libldap_r-2.4.so.2
