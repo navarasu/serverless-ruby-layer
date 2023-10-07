@@ -96,7 +96,7 @@ describe('serverless package', function () {
         .then(function(data){
           assert.deepEqual(function_files,data)
         })
-      run_time = '2.7'
+      run_time = '3.2'
       value = readZip(layer_zip_path)
         .then(function(data){
           if (!check_version) {
