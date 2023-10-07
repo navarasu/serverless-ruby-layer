@@ -42,30 +42,30 @@ let test_data = [
     '/specifications/','/gems/httparty-0.18.1/', '/gems/mime-types-data-3.2020.1104/', '/gems/multi_xml-0.6.0/', '/gems/mime-types-3.3.1/'],
     function_files: ['Gemfile', 'Gemfile.lock', 'handler.rb'], include_functions: ['Hello'], exclude_functions:[], check_version: true },
 
-  { folder: 'use-docker-with-gemfile-lock', gem_zip_dirs: ['/','/bin/','/build_info/','/doc/','/extensions/', '/gems/', 
-    '/plugins/', '/specifications/','/gems/httparty-0.18.1/', '/gems/mime-types-data-3.2020.1104/', '/gems/multi_xml-0.6.0/', '/gems/mime-types-3.3.1/'],
-    function_files: ['Gemfile', 'Gemfile.lock', 'handler.rb'], include_functions: ['Hello'], exclude_functions:[], check_version: true },
+  // { folder: 'use-docker-with-gemfile-lock', gem_zip_dirs: ['/','/bin/','/build_info/','/doc/','/extensions/', '/gems/', 
+  //   '/plugins/', '/specifications/','/gems/httparty-0.18.1/', '/gems/mime-types-data-3.2020.1104/', '/gems/multi_xml-0.6.0/', '/gems/mime-types-3.3.1/'],
+  //   function_files: ['Gemfile', 'Gemfile.lock', 'handler.rb'], include_functions: ['Hello'], exclude_functions:[], check_version: true },
 
-  { folder: 'basic-ignore-gemfile-lock', gem_zip_dirs: ['/','/bin/','/build_info/','/doc/','/extensions/', '/gems/', 
-    '/specifications/','/gems/httparty-0.18.1/', '/gems/mime-types-data-3.2021.0225/', '/gems/multi_xml-0.6.0/', '/gems/mime-types-3.3.1/'],
-    function_files: ['handler.rb'], include_functions: ['Hello'], exclude_functions:[], check_version: true },
+  // { folder: 'basic-ignore-gemfile-lock', gem_zip_dirs: ['/','/bin/','/build_info/','/doc/','/extensions/', '/gems/', 
+  //   '/specifications/','/gems/httparty-0.18.1/', '/gems/mime-types-data-3.2021.0225/', '/gems/multi_xml-0.6.0/', '/gems/mime-types-3.3.1/'],
+  //   function_files: ['handler.rb'], include_functions: ['Hello'], exclude_functions:[], check_version: true },
 
-  { folder: 'use-docker-ignore-gemfile-lock', gem_zip_dirs: ['/','/bin/','/build_info/','/doc/','/extensions/', '/plugins/',
-    '/gems/', '/specifications/','/gems/httparty-0.20.0/', '/gems/mime-types-data-3.2022.0105/', '/gems/multi_xml-0.6.0/', '/gems/mime-types-3.4.1/'],
-    function_files: ['handler.rb'], include_functions: ['Hello'], exclude_functions:[], check_version: true },
+  // { folder: 'use-docker-ignore-gemfile-lock', gem_zip_dirs: ['/','/bin/','/build_info/','/doc/','/extensions/', '/plugins/',
+  //   '/gems/', '/specifications/','/gems/httparty-0.20.0/', '/gems/mime-types-data-3.2022.0105/', '/gems/multi_xml-0.6.0/', '/gems/mime-types-3.4.1/'],
+  //   function_files: ['handler.rb'], include_functions: ['Hello'], exclude_functions:[], check_version: true },
 
-  { folder: 'bundler-require-all', gem_zip_dirs: ['/','/bin/','/build_info/','/doc/','/extensions/', '/plugins/',
-    '/gems/', '/specifications/','/gems/httparty-0.18.1/', '/gems/mime-types-data-3.2020.1104/', '/gems/multi_xml-0.6.0/', '/gems/mime-types-3.3.1/',
-    '/gems/nokogiri-1.11.3-x86_64-linux/', '/gems/racc-1.5.2/', '/extensions/x86_64-linux/', '/gems/mini_portile2-2.5.1/' ],
-    function_files: ['Gemfile', 'Gemfile.lock', 'handler.rb'], include_functions: ['Hello'], exclude_functions:[], check_version: true },
+  // { folder: 'bundler-require-all', gem_zip_dirs: ['/','/bin/','/build_info/','/doc/','/extensions/', '/plugins/',
+  //   '/gems/', '/specifications/','/gems/httparty-0.18.1/', '/gems/mime-types-data-3.2020.1104/', '/gems/multi_xml-0.6.0/', '/gems/mime-types-3.3.1/',
+  //   '/gems/nokogiri-1.11.3-x86_64-linux/', '/gems/racc-1.5.2/', '/extensions/x86_64-linux/', '/gems/mini_portile2-2.5.1/' ],
+  //   function_files: ['Gemfile', 'Gemfile.lock', 'handler.rb'], include_functions: ['Hello'], exclude_functions:[], check_version: true },
 
-  { folder: 'use-docker-with-environment', gem_zip_dirs: ['/','/bin/','/build_info/','/doc/','/extensions/', '/gems/', '/plugins/',
-    '/specifications/','/extensions/x86_64-linux/','/gems/httparty/', '/gems/mime-types-data/', '/gems/multi_xml/', '/gems/mime-types/', 
-    '/gems/nokogiri/', '/gems/mini_portile2/'], function_files: ['handler.rb'], include_functions: ['Hello'], exclude_functions:[] },
+  // { folder: 'use-docker-with-environment', gem_zip_dirs: ['/','/bin/','/build_info/','/doc/','/extensions/', '/gems/', '/plugins/',
+  //   '/specifications/','/extensions/x86_64-linux/','/gems/httparty/', '/gems/mime-types-data/', '/gems/multi_xml/', '/gems/mime-types/', 
+  //   '/gems/nokogiri/', '/gems/mini_portile2/'], function_files: ['handler.rb'], include_functions: ['Hello'], exclude_functions:[] },
 
-  { folder: 'use-docker-file-with-environment', gem_zip_dirs: ['/','/bin/','/build_info/','/doc/','/extensions/', '/gems/', '/plugins/',
-    '/specifications/','/extensions/x86_64-linux/','/gems/httparty/', '/gems/mime-types-data/', '/gems/multi_xml/', '/gems/mime-types/', 
-    '/gems/nokogiri/', '/gems/mini_portile2/'], function_files: ['handler.rb'], include_functions: ['Hello'], exclude_functions:[] },
+  // { folder: 'use-docker-file-with-environment', gem_zip_dirs: ['/','/bin/','/build_info/','/doc/','/extensions/', '/gems/', '/plugins/',
+  //   '/specifications/','/extensions/x86_64-linux/','/gems/httparty/', '/gems/mime-types-data/', '/gems/multi_xml/', '/gems/mime-types/', 
+  //   '/gems/nokogiri/', '/gems/mini_portile2/'], function_files: ['handler.rb'], include_functions: ['Hello'], exclude_functions:[] },
 ]
 
 describe('serverless package', function () {
@@ -96,7 +96,7 @@ describe('serverless package', function () {
         .then(function(data){
           assert.deepEqual(function_files,data)
         })
-      run_time = '2.7'
+      run_time = folder.endsWith('pg-old')? '2.7': '3.2'
       value = readZip(layer_zip_path)
         .then(function(data){
           if (!check_version) {

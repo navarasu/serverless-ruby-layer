@@ -27,7 +27,7 @@ custom:
 
 provider:
   name: aws
-  runtime: ruby2.7
+  runtime: ruby3.2
 
 functions:
   hello:
@@ -36,8 +36,10 @@ functions:
 
 #### ** Dockerfile **
 ```docker
-FROM lambci/lambda:build-ruby2.7
+FROM public.ecr.aws/sam/build-ruby3.2:latest-x86_64
 
+RUN yum install -y amazon-linux-extras
+RUN amazon-linux-extras enable postgresql10
 RUN yum install -y postgresql-devel
 RUN gem update bundler
 
@@ -48,7 +50,7 @@ CMD "/bin/bash"
 
 ```ruby
 source 'https://rubygems.org'
-gem 'pg', '1.2.3'
+gem 'pg'
 ```
 
 #### ** handler.rb **
