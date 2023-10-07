@@ -1,5 +1,10 @@
 # Release notes
 
+### [1.7.0](https://www.npmjs.com/package/serverless-ruby-layer/v/1.7.0)
+### Ruby 3.2 Support Release
+* Replace deprecated Docker image with AWS base image for Lambda
+* Updated examples to 3.2
+
 ### [1.6.0](https://www.npmjs.com/package/serverless-ruby-layer/v/1.6.0)
 ### Environment Release
 * Pass environment variable to docker for bundler/ Gemfile
