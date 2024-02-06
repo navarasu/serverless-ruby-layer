@@ -5,12 +5,12 @@ GEM
       mini_mime (>= 1.0.0)
       multi_xml (>= 0.5.2)
     mini_mime (1.1.2)
-    mini_portile2 (2.8.4)
+    mini_portile2 (2.8.5)
     multi_xml (0.6.0)
-    nokogiri (1.14.3)
-      mini_portile2 (~> 2.8.0)
+    nokogiri (1.16.2)
+      mini_portile2 (~> 2.8.2)
       racc (~> 1.4)
-    racc (1.7.1)
+    racc (1.7.3)
 
 PLATFORMS
   ruby
